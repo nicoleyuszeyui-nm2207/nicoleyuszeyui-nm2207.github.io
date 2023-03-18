@@ -128,7 +128,7 @@ options: {
 // //chart1.update();
 // //changeDataPointColor(chart1 ,1, "blue");
 
-function open(evt,Datanum) {
+function opendata(evt,Datanum) {
     clearCanvas();
     // Declare all variables
     var i, tabcontent, tablinks;
