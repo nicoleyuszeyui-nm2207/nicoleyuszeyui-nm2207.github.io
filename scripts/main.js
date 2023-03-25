@@ -1,8 +1,122 @@
 //var backgroundColorList = [];
 function dataopen1(){
+    const labelYear = ["1896","1900","1904","1906","1908","1912","1920","1924","1928","1932","1936"]
+    const dataObj1 = {
+            labels:labelYear,
+            datasets: [
+                {
+                    label: "Countries",
+                    data:[12,31,15,21,22,29,29,45,46,47,49],
+                    fill: false,
+                    borderWidth: 2,
+                    backgroundColor:"blue",
+                    pointBackgroundColor: ['blue','blue','blue','blue','blue','blue','blue','blue','blue','blue','red'],
+                    borderColor: "blue",
+                    pointRadius: [3,3,3,3,3,3,3,3,3,3,6]    
+    
+             }
+            ]
+    }
+
+var chart1 = new Chart ("line-chart",
+{
+type: "line",
+data: dataObj1,
+options: { 
+    maintainAspectRatio: false,
+    elements: {
+        line: {
+            tension: 0
+        }
+    },
+    legend: {
+        display: true
+    },
+    title: {
+        display: true,
+        text: ['Number of countries that participated'],
+        fontFamily: "TrebuchetMS",
+        fontSize: 24,
+        fontColor: "Crimson",
+    }   
+    
+}
+
+});
+
+}
+
+
+function dataopen3(){
     clearCanvas();
+const labelAthletes = ["Jesse Owens","Ralph Metcalfe","Godfrey Brown","Volmari Iso-Hollo","Gerhard Stock","Naoto Tajima","Tinus Osendarp"]
+    const dataObj3 = {
+            labels:labelAthletes,
+            datasets: [
+                {
+                    label: "Gold medals",
+                    data:[4,1,1,1,1,1,0],
+                    backgroundColor:"gold"
+             },
+                {
+                    label: "Silver medals",
+                    data:[0,1,1,0,0,0,0],
+                    backgroundColor:"silver"
+            },
+                {
+                    label: "Bronze medals",
+                    data:[0,0,0,1,1,1,2],
+                    backgroundColor:"brown"
+            }
+
+            ]
+    }
+
+var chart3 = new Chart ("bar-chart",
+{
+type: 'bar',
+data: dataObj3,
+options:{
+        chartAreaBorder: {
+          borderColor: 'black'
+        },
+    responsive: true,
+    scales: {
+      x: {
+        stacked: true,
+        color: "black",
+      },
+      y: {
+        title: {
+            display: true,
+            text:"Medals"
+        },
+        stacked: true,
+        color: "black",
+        ticks: {
+            stepSize: 4
+        }
+        
+      }
+    },
+  title: {
+    display: true,
+    text: ['Top 7 most decorated athletes (Athletics)'],
+    fontFamily: "TrebuchetMS",
+    fontSize: 24,
+    fontColor: 'crimson'
+    }
+}  
+});
+};
+
+
+
+function dataopen2(){
+    clearCanvas();
+    clearCanvas1();
     const labelYear = ["1992","1996","2000","2004","2008","2012","2016"]
-    const dataObj = {
+    const dataObj2 = {
             labels:labelYear,
             datasets: [
                 {
@@ -87,10 +201,10 @@ function dataopen1(){
         
 }
   
-var chart1 = new Chart ("line-chart",
+var chart2 = new Chart ("line-chart",
 {
 type: "line",
-data: dataObj,
+data: dataObj2,
 options: { 
     maintainAspectRatio: false,
     elements: {
@@ -114,6 +228,8 @@ options: {
 });
 
 }
+
+
 // for (i = 0; i < chart1.data.datasets[0].data.length; i++) {
 //     if(chart1.data.datasets[0].data[i]>6) {
 //         backgroundColorList.push("red");
@@ -148,19 +264,30 @@ function opendata(evt,Datanum) {
     // Show the current tab, and add an "active" class to the button that opened the tab
     document.getElementById(Datanum).style.display = "block";
     evt.currentTarget.className += " active";
-  }
+  };
 
   function clearCanvas() {
     var canvas = document.getElementById("line-chart");
     var context = canvas.getContext("2d");
     context.clearRect(0, 0, canvas.width, canvas.height);
-  }
+  };
 
+  function clearCanvas1() {
+    var canvas = document.getElementById("bar-chart");
+    var context = canvas.getContext("2d");
+    context.clearRect(0, 0, canvas.width, canvas.height);
+  };
 
-
-
-
-
+  document.getElementById("defaultOpen").click();
+  party.confetti(runButton, {
+	count: party.variation.range(400, 500),
+    size: party.variation.range(3,4),
+    spread: party.variation.range(400),
+    shapes: ["star"]
+});
+  document.querySelector(".button").addEventListener("click", function (e) {
+    party.confetti(this);
+});
 
 
 
