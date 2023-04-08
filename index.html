@@ -13,6 +13,7 @@
     <h2> <a href="https://nm2207.org/2223S2/e0773626/web/Finalproject/resources/finalprojectmid.docx">Click to download my word document for the final project! (Week 9 diary entry)</a></h2>
     <h2> <a href="https://nm2207.org/2223S2/e0773626/web/Week10diary/index.html">Click to view my Week 10 diary entry!</a></h2>
     <h2> <a href="https://nm2207.org/2223S2/e0773626/web/Week11diary/index.html">Click to view my Week 11 diary entry!</a></h2>
+    <h2> <a href="https://nm2207.org/2223S2/e0773626/web/storyboard1/index.html">Click to view my Week 12 diary entry!</a></h2>
     <div class= "confetti">
     <button class= "confettibutton" type="button" onmousedown="party.confetti(this)" >Click Me!</button>
     </div>
@@ -20,9 +21,9 @@
     <br>
     <br>
     <div class="tab">
-      <button class="tablinks" id="defaultOpen" onclick="opendata(event, 'Intro')" >Introduction</button>
-      <button class="tablinks" id= "tab2" onclick="dataopen1();dataopen3();opendata(event,'Data1')">Data 1</button>
-      <button class="tablinks" id= "tab3" onclick="dataopen2();opendata(event,'Data2')">Data 2</button>
+      <button class="tablinks" id="defaultOpen" onclick="opendata0(event, 'Intro')" >Introduction</button>
+      <button class="tablinks" id= "tab2" onclick="dataopen1();dataopen3();opendata1(event,'Data1');opendata1(event,'Data3')">Data 1</button>
+      <button class="tablinks" id= "tab3" onclick="dataopen2();opendata2(event,'Data2')">Data 2</button>
       <button class="tablinks" id= "tab4" onclick="dataopen3();opendata(event,'Data3')">Data 3</button>
       <button class="tablinks" onclick="dataopen()">Data 4</button>
       <button class="tablinks" onclick="dataopen()">Data 5</button>
@@ -30,14 +31,14 @@
     <br>
     <br>
     <!--Content of the tabs-->
-    <div id = "Intro" class="tabcontent">
+    <div id = "Intro" class="tabcontent0">
       <h3>Introduction to the Olympics!!</h3>
       <img src="https://nm2207.org/2223S2/e0773626/web/Finalproject/resources/olympicslogo.png" alt = "Logo" class = "center" style="width:700px;height:500px;">
     </div>
     <div id="canvas-container">
     <canvas id="line-chart" width="400" height="150"></canvas>
     </div>
-    <div id="Data1" class="tabcontent">
+    <div id="Data1" class="tabcontent1">
       <h2 style="color: crimson">Berlin 1936: The Nazi Olympics</h2>
       <p>
         In 1931, Berlin was voted to host the 1936 Summer Olympics. However, the <i><span style="color: crimson">Nazi Party</span></i> started rising to power in Germany in 1933 when
@@ -54,11 +55,16 @@
     <div id="canvas-container">
       <canvas id="bar-chart" width="400" height="200"></canvas>
       </div>
-    <div id="Data3" class="tabcontent">
+    <div id="Data3" class="tabcontent1">
       <h3>Data 3</h3>
-      <p>Data 3 graphs and words</p>
+      <p>In the Nazi Olympics, Jesse Owens and Ralph Metcalfe were the two most decorated athletes in the Athletics sport. 
+        Jesse Owens brought home 4 gold medals and Ralph Metcalfe secured 1 Gold and 1 Silver medal. Both of them were 
+        African-Americans and Jesse Owens in particular, was known to be the star of the games who destroyed Germany’s 
+        attempt at proving Aryan superiority. 
+
+      </p>
     </div>
-    <div id="Data2" class="tabcontent">
+    <div id="Data2" class="tabcontent2">
       <h3>Data 2</h3>
       <p>Data 2 graphs and words</p>
     </div>
@@ -70,12 +76,12 @@
    
     
 
-    <div id="Data4" class="tabcontent">
+    <div id="Data4" class="tabcontent4">
       <h3>Data 4</h3>
       <p>Data 4 graphs and words</p>
     </div>
 
-    <div id="Data5" class="tabcontent">
+    <div id="Data5" class="tabcontent5">
       <h3>Data 5</h3>
       <p>Data 5 graphs and words</p>
     </div>
