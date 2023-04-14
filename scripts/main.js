@@ -147,11 +147,11 @@ options:{
 });
 };
 
-function dataopen2(){//creating a function for my line graph
+function dataopen4(){//creating a function for my line graph
     clearCanvas(); //calling the clearCanvas function
     clearCanvas1(); //calling the clearCanvas1 function
     const labelYear = ["1992","1996","2000","2004","2008","2012","2016"]
-    const dataObj2 = {
+    const dataObj4 = {
             labels:labelYear,//x-axis labels
             datasets: [
                 {
@@ -238,7 +238,7 @@ function dataopen2(){//creating a function for my line graph
 var chart2 = new Chart ("line-chart",//creating the line chart
 {
 type: "line",
-data: dataObj2,
+data: dataObj4,
 options: { 
     maintainAspectRatio: true,
     elements: {
@@ -254,7 +254,7 @@ options: {
         text: ['% of medals won by host country from 1992-2016'],
         fontFamily: "TrebuchetMS",
         fontSize: 24,
-        fontColor: 'rgb(0,120,0)',
+        fontColor: 'crimson',
     }   
     
     
@@ -264,9 +264,69 @@ options: {
 
 };
 
+function dataopen2(){//creating a function for my bargraph
+    clearCanvas(); //calling the clearCanvas function
+    clearCanvas1(); //calling the clearCanvas1 function
+    const labelYear = ["1956 Melbourne","1964 Tokyo","1976 Montreal","1980 Moscow","1984 Los Angeles","1988 Seoul"]
+    const dataObj4 = {
+            labels:labelYear,//x-axis labels
+            datasets: [
+                {
+                    label: "Number of countries that did not attend the Olympics (1956-1988)",
+                    data:[8,3,34,66,18,7],
+                    fill: false,
+                    borderWidth: 2,
+                    backgroundColor:"#1d7874",
+                    pointBackgroundColor: ['#1d7874','#1d7874','#1d7874','#1d7874','#1d7874','#1d7874'],
+                    borderColor: "fuchsia",
+                    pointRadius: [5,5,5,5,5,5]
+        
+            }
+
+            ]
+        
+}
+var chart4 = new Chart ("bar-graph",//creating the bargraph
+{
+type: "bar",
+data: dataObj4,
+options: { 
+    maintainAspectRatio: true,
+    elements: {
+        line: {
+            tension: 0
+        }
+    },
+    legend: {
+        display: true
+    },
+    title: {
+        display: true,
+        text: ["Number of boycotts/non-attendance in Olympic history (1956-1988)"],
+        fontFamily: "TrebuchetMS",
+        fontSize: 24,
+        fontColor: 'crimson',
+    },
+    scales: {
+        yAxes: [{
+            ticks: {
+                display: true
+            }
+        }]
+    }
+    
+    
+}
+
+});
+
+};
+
+
 function opendata0(evt,Datanum) {//this function displays the texts in the data story
     clearCanvas();//clearCanvas function is called
-    clearCanvas1();
+    clearCanvas1();//clearCanvas1 function is called
+    clearCanvas2();//clearCanvas2 function is called
     var i, tabcontent, tablinks;//variables are declared here
   
     tabcontent = document.getElementsByClassName("tabcontent1");//all elements with class="tabcontent1" are taken
@@ -296,6 +356,7 @@ function opendata0(evt,Datanum) {//this function displays the texts in the data 
 
 function opendata1(evt,Datanum) {//this function displays the texts in the data story
     clearCanvas();//clearCanvas function is called
+    clearCanvas2();//clearCanvas2 function is called
     var i, tabcontent, tablinks;//variables are declared here
   
     tabcontent = document.getElementsByClassName("tabcontent0");//all elements with class="tabcontent0" are taken
@@ -324,14 +385,15 @@ function opendata1(evt,Datanum) {//this function displays the texts in the data 
     evt.currentTarget.className += " active";// adds the "active" class to the button that was clicked to open the tab 
   };
 
-function opendata2(evt,Datanum) {//this function displays the texts in the data story
+  function opendata2(evt,Datanum) {//this function displays the texts in the data story
     clearCanvas();//clearCanvas function is called
+    clearCanvas2();//clearCanvas2 function is called
     var i, tabcontent, tablinks;//variables are declared here
+  
     tabcontent = document.getElementsByClassName("tabcontent0");//all elements with class="tabcontent0" are taken
     for (i = 0; i < tabcontent.length; i++) {//for loop loops through all the elements in this class
       tabcontent[i].style.display = "none";//all elements with class ="tabcontent" are hidden
     }
-    
     tabcontent = document.getElementsByClassName("tabcontent1");//all elements with class="tabcontent1" are taken
     for (i = 0; i < tabcontent.length; i++) {//for loop loops through all the elements in this class
       tabcontent[i].style.display = "none";//all elements with class ="tabcontent" are hidden
@@ -355,6 +417,68 @@ function opendata2(evt,Datanum) {//this function displays the texts in the data 
   };
 
 
+function opendata4(evt,Datanum) {//this function displays the texts in the data story
+    clearCanvas();//clearCanvas function is called
+    clearCanvas2();//clearCanvas2 function is called
+    var i, tabcontent, tablinks;//variables are declared here
+    tabcontent = document.getElementsByClassName("tabcontent0");//all elements with class="tabcontent0" are taken
+    for (i = 0; i < tabcontent.length; i++) {//for loop loops through all the elements in this class
+      tabcontent[i].style.display = "none";//all elements with class ="tabcontent" are hidden
+    }
+    
+    tabcontent = document.getElementsByClassName("tabcontent1");//all elements with class="tabcontent1" are taken
+    for (i = 0; i < tabcontent.length; i++) {//for loop loops through all the elements in this class
+      tabcontent[i].style.display = "none";//all elements with class ="tabcontent" are hidden
+    }
+    tabcontent = document.getElementsByClassName("tabcontent2");//all elements with class="tabcontent2" are taken
+    for (i = 0; i < tabcontent.length; i++) {//for loop loops through all the elements in this class
+      tabcontent[i].style.display = "none";//all elements with class ="tabcontent" are hidden
+    }
+    tabcontent = document.getElementsByClassName("tabcontent5");//all elements with class="tabcontent5" are taken
+    for (i = 0; i < tabcontent.length; i++) {//for loop loops through all the elements in this class
+      tabcontent[i].style.display = "none";//all elements with class ="tabcontent" are hidden
+    }
+  
+    tablinks = document.getElementsByClassName("tablinks"); //all elements with class = "tablinks" are taken
+    for (i = 0; i < tablinks.length; i++) {//for lopp lopps through all elements in this class
+      tablinks[i].className = tablinks[i].className.replace(" active", "");//all elements with class ="tablinks" are hidden by removing the "active" class
+    }
+
+    document.getElementById(Datanum).style.display = "block";   // set style.display property of the element with the ID specified by the "Datanum" parameter to "block"
+    evt.currentTarget.className += " active";// adds the "active" class to the button that was clicked to open the tab 
+  };
+
+  function opendata5(evt,Datanum) {//this function displays the texts in the data story
+    clearCanvas();//clearCanvas function is called
+    clearCanvas1();//clearCanvas2 function is called
+    var i, tabcontent, tablinks;//variables are declared here
+    tabcontent = document.getElementsByClassName("tabcontent0");//all elements with class="tabcontent0" are taken
+    for (i = 0; i < tabcontent.length; i++) {//for loop loops through all the elements in this class
+      tabcontent[i].style.display = "none";//all elements with class ="tabcontent" are hidden
+    }
+    
+    tabcontent = document.getElementsByClassName("tabcontent1");//all elements with class="tabcontent1" are taken
+    for (i = 0; i < tabcontent.length; i++) {//for loop loops through all the elements in this class
+      tabcontent[i].style.display = "none";//all elements with class ="tabcontent" are hidden
+    }
+    tabcontent = document.getElementsByClassName("tabcontent4");//all elements with class="tabcontent4" are taken
+    for (i = 0; i < tabcontent.length; i++) {//for loop loops through all the elements in this class
+      tabcontent[i].style.display = "none";//all elements with class ="tabcontent" are hidden
+    }
+    tabcontent = document.getElementsByClassName("tabcontent2");//all elements with class="tabcontent2" are taken
+    for (i = 0; i < tabcontent.length; i++) {//for loop loops through all the elements in this class
+      tabcontent[i].style.display = "none";//all elements with class ="tabcontent" are hidden
+    }
+  
+    tablinks = document.getElementsByClassName("tablinks"); //all elements with class = "tablinks" are taken
+    for (i = 0; i < tablinks.length; i++) {//for lopp lopps through all elements in this class
+      tablinks[i].className = tablinks[i].className.replace(" active", "");//all elements with class ="tablinks" are hidden by removing the "active" class
+    }
+
+    document.getElementById(Datanum).style.display = "block";   // set style.display property of the element with the ID specified by the "Datanum" parameter to "block"
+    evt.currentTarget.className += " active";// adds the "active" class to the button that was clicked to open the tab 
+  };
+
   function clearCanvas() {//function created to clear the content of the HTML canvas element with the ID "line-chart"
     var canvas = document.getElementById("line-chart");// variable with the name canvas is initialized to be the canvas element with ID "line-chart"
     var context = canvas.getContext("2d");//variable with the name context is initialized to be the 2D rendering context of the canvas
@@ -363,6 +487,12 @@ function opendata2(evt,Datanum) {//this function displays the texts in the data 
 
   function clearCanvas1() {//function created to clear the content of the HTML canvas element with the ID "bar-chart"
     var canvas = document.getElementById("bar-chart");// variable with the name canvas is initialized to be the canvas element with ID "bar-chart"
+    var context = canvas.getContext("2d");//variable with the name context is initialized to be the 2D rendering context of the canvas
+    context.clearRect(0, 0, canvas.width, canvas.height);//clear the entire canvas by setting its top-left corner to (0,0) and its width and height to the canvas's width and height
+  };
+
+  function clearCanvas2() {//function created to clear the content of the HTML canvas element with the ID "timeline"
+    var canvas = document.getElementById("timeline");// variable with the name canvas is initialized to be the canvas element with ID "timeline"
     var context = canvas.getContext("2d");//variable with the name context is initialized to be the 2D rendering context of the canvas
     context.clearRect(0, 0, canvas.width, canvas.height);//clear the entire canvas by setting its top-left corner to (0,0) and its width and height to the canvas's width and height
   };
