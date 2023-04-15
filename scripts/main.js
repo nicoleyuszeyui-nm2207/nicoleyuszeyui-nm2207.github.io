@@ -482,19 +482,19 @@ function opendata4(evt,Datanum) {//this function displays the texts in the data 
   function clearCanvas() {//function created to clear the content of the HTML canvas element with the ID "line-chart"
     var canvas = document.getElementById("line-chart");// variable with the name canvas is initialized to be the canvas element with ID "line-chart"
     var context = canvas.getContext("2d");//variable with the name context is initialized to be the 2D rendering context of the canvas
-    context.clearRect(0, 0, canvas.width, canvas.height);//clear the entire canvas by setting its top-left corner to (0,0) and its width and height to the canvas's width and height
+    context.clearRect(0, 0, canvas.width, canvas.height);//clear the entire canvas by setting its top-left corner to (0,0) and its width and height to the canvas's width and height (used chatgpt for this)
 }
 
   function clearCanvas1() {//function created to clear the content of the HTML canvas element with the ID "bar-chart"
     var canvas = document.getElementById("bar-chart");// variable with the name canvas is initialized to be the canvas element with ID "bar-chart"
     var context = canvas.getContext("2d");//variable with the name context is initialized to be the 2D rendering context of the canvas
-    context.clearRect(0, 0, canvas.width, canvas.height);//clear the entire canvas by setting its top-left corner to (0,0) and its width and height to the canvas's width and height
+    context.clearRect(0, 0, canvas.width, canvas.height);//clear the entire canvas by setting its top-left corner to (0,0) and its width and height to the canvas's width and height (used chatgpt for this)
   };
 
   function clearCanvas2() {//function created to clear the content of the HTML canvas element with the ID "timeline"
     var canvas = document.getElementById("timeline");// variable with the name canvas is initialized to be the canvas element with ID "timeline"
     var context = canvas.getContext("2d");//variable with the name context is initialized to be the 2D rendering context of the canvas
-    context.clearRect(0, 0, canvas.width, canvas.height);//clear the entire canvas by setting its top-left corner to (0,0) and its width and height to the canvas's width and height
+    context.clearRect(0, 0, canvas.width, canvas.height);//clear the entire canvas by setting its top-left corner to (0,0) and its width and height to the canvas's width and height (used chatgpt for this)
   };
     const tab1 = document.getElementById('defaultOpen');//initialize a variable tab 1 to be the element with ID "defaultOpen"
     const tab2 = document.getElementById('tab2');//initialize a variable tab 1 to be the element with ID "tab2"
@@ -504,7 +504,7 @@ function opendata4(evt,Datanum) {//this function displays the texts in the data 
     tab2.addEventListener("click", clearCanvas);//once the tab is clicked, the clearVanvas function is called
     tab3.addEventListener("click", clearCanvas);//once the tab is clicked, the clearVanvas function is called
 
-  document.getElementById("defaultOpen").click(); //using the party.js to create some confetti when button is clicked
+  document.getElementById("defaultOpen").click(); //using the party.js package to create some confetti when button is clicked
   party.confetti(runButton, {
 	count: party.variation.range(400, 500),
     size: party.variation.range(3,4),
